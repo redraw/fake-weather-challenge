@@ -1,0 +1,2 @@
+class WeatherProviderError(Exception):
+    pass
