@@ -23,6 +23,7 @@ class TemperatureView(APIView):
     
     - `unit` is optional. Possible values: `celsius`, `fahrenheit`
     """
+
     def post(self, request):
         serializer = TemperatureQuerySerializer(data=request.data)
 

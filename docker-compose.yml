@@ -7,3 +7,14 @@ services:
       dockerfile: ./external/mock-weather-api.Dockerfile
     ports:
       - "5000:5000"
+
+  api:
+    build:
+      context: ./src
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./src:/code"
+    environment:
+      DJANGO_SETTINGS_MODULE: "app.settings.dev"
+      WEATHER_API_URL: "http://mock-weather-api"
