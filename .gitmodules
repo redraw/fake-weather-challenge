@@ -1,0 +1,3 @@
+[submodule "mock-weather-api"]
+	path = mock-weather-api
+	url = https://github.com/shipwell/mock-weather-api
