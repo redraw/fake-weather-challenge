@@ -6,18 +6,16 @@ services:
       context: ./external/mock-weather-api
       dockerfile: ./external/mock-weather-api.Dockerfile
     ports:
-      - "5000:5000"
+      - "5000"
 
   api:
     build:
       context: ./src
+    command: "./run.sh"
     ports:
       - "8000:8000"
-    command: "python manage.py runserver 0.0.0.0:8000"
-    volumes:
-      - "./src:/code"
-    depends_on: 
+    depends_on:
       - mock-weather-api
     environment:
-      DJANGO_SETTINGS_MODULE: "app.settings.dev"
+      DJANGO_SETTINGS_MODULE: "app.settings.prod"
       WEATHER_API_URL: "http://mock-weather-api:5000"

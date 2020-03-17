@@ -14,14 +14,14 @@ class TemperatureView(APIView):
 
     ```
     {
-        "lat": 33.2
+        "lat": 33.2,
         "lon": 44.2,
-        "filters": ["noaa", "accuweather"],
+        "providers": ["noaa", "accuweather"],
         "unit": "celsius"
     }
     ```
     
-    - `unit` is optional. Possible values: `celsius`, `fahrenheit`
+    - `unit` possible values: `celsius`, `fahrenheit`
     """
 
     def post(self, request):

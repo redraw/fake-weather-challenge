@@ -21,3 +21,4 @@ That way we can also fetch the `mock-weather-api` submodule.
 ```bash
 $ docker-compose up
 ```
+Go to `http://localhost:8000`

@@ -4,4 +4,5 @@ RUN mkdir /code
 WORKDIR /code
 COPY . /code
 RUN pip install -r requirements.txt
-CMD gunicorn -b 0.0.0.0:8000 app.wsgi
+RUN chmod +x run.sh
+CMD ./run.sh
