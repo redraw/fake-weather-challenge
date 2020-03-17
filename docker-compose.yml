@@ -1,10 +1,9 @@
-version: '3'
+version: "3"
 
 services:
-    mock-weather-api:
-        build:
-            context: ./mock-weather-api
-            dockerfile: ../mock-weather-api.Dockerfile
-        ports:
-            - "5000:5000"
-
+  mock-weather-api:
+    build:
+      context: ./external/mock-weather-api
+      dockerfile: ./external/mock-weather-api.Dockerfile
+    ports:
+      - "5000:5000"
