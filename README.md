@@ -22,3 +22,33 @@ That way we can also fetch the `mock-weather-api` submodule.
 $ docker-compose up
 ```
 Go to `http://localhost:8000`
+
+## `GET /api/temp`
+
+- lat: latitude
+- lon: longitude
+- providers: separated by comma. Possible values: noaa, accuweather, weatherdotcom
+- unit: default is celsius. Possible values: celsius, fahrenheit
+
+```
+GET /api/temp/?lat=33.3&lon=22.5&providers=noaa,accuweather
+HTTP 200 OK
+Allow: GET, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+{
+    "avg": {
+        "celsius": 12.0
+    },
+    "query": {
+        "lat": 33.3,
+        "lon": 22.5,
+        "unit": "celsius",
+        "providers": [
+            "accuweather",
+            "noaa"
+        ]
+    }
+}
+```

@@ -1,6 +1,8 @@
 import logging
 from statistics import mean
 
+from requests.exceptions import RequestException
+
 from weather.providers import NOAAProvider, AccuweatherProvider, WeatherDotComProvider
 from weather.exceptions import WeatherProviderError
 
@@ -26,6 +28,8 @@ class WeatherClient:
             try:
                 temp = provider.get_temp(lat, lon, unit=unit)
                 values.append(temp)
+            except RequestException as e:
+                raise WeatherProviderError(f"Couldn't connect to provider: {provider}")
             except Exception as e:
                 logger.error(f"[{provider}] {str(e)}")
 
