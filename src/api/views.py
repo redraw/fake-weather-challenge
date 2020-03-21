@@ -37,6 +37,8 @@ class TemperatureView(APIView):
                 lat=query["lat"], lon=query["lon"], unit=unit
             )
         except WeatherProviderError as error:
-            return Response(status=400, data={"message": str(error)})
+            return Response(
+                status=status.HTTP_503_SERVICE_UNAVAILABLE, data={"message": str(error)}
+            )
 
         return Response(data={"avg": {unit: average_temp}, "query": query})

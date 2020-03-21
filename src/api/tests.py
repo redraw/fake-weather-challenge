@@ -46,4 +46,4 @@ class TestTemperatureView(APITestCase):
     def test_weather_api_request_exception(self, mock_average_temp):
         mock_average_temp.side_effect = WeatherProviderError
         response = self.client.get(self.PATH, {"lat": 33.2, "lon": 44.3})
-        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.status_code, 503)
