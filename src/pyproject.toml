@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "forecast"
 version = "0.1.0"
-description = "Challenge technical exam for coderio."
+description = "Challenge technical exam for x."
 authors = ["redraw <agustinbv@gmail.com>"]
 
 [tool.poetry.dependencies]

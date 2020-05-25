@@ -1,16 +1,16 @@
-# coderio-challenge
+# fake-weather-challenge
 
 ## Install
 Clone the repo,
 
 ```bash
-$ git clone --recurse-submodules git@github.com:redraw/coderio-challenge.git
+$ git clone --recurse-submodules git@github.com:redraw/fake-weather-challenge.git
 ```
 
 or 
 
 ```bash
-$ git clone git@github.com:redraw/coderio-challenge.git
+$ git clone git@github.com:redraw/fake-weather-challenge.git
 $ git submodule update --init
 ```
 
